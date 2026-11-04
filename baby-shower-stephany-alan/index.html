@@ -431,7 +431,7 @@ svg { display: block; }
     <div class="arch2">
       <h3 class="script">Confirmar asistencia</h3>
       <p>Nos encantará saber que nos acompañarás. Permítenos preparar los detalles confirmando tu asistencia.</p>
-      <a class="btn pink" id="rsvpBtn" target="_blank" rel="noopener">Confirmar aquí</a>
+      <a class="btn pink" id="rsvpBtn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.1C.9 8.6 3 5 6.6 5c2.1 0 3.6 1.2 4.4 2.6h2C13.8 6.2 15.3 5 17.4 5 21 5 23.1 8.6 21.6 11.9 19.5 16.4 12 21 12 21z"/></svg>Sí asistiré</a>
     </div>
     <img class="peek" src="osita.png" alt="Osita con moño rosa y flores" width="410" height="480">
     <svg class="meadow" viewBox="0 0 400 70" data-meadow="28" aria-hidden="true" style="position:relative;z-index:4"></svg>
@@ -463,8 +463,9 @@ const EVENTO = {
   fechaISO: "2026-12-26T14:30:00-06:00",
   finISO:   "2026-12-26T19:00:00-06:00",
   lugar: "Salón Gran Jardín, Soledad 27, Tecámac, Estado de México",
-  whatsapp: "",  // número a 10 dígitos con 52 al inicio, p. ej. "525512345678"
-  mensajeRSVP: "¡Hola! Confirmo mi asistencia al Baby Shower de Stephany y Alan el sábado 26 de diciembre. 🐝💕"
+  whatsapp: "525551870628",  // 52 + número a 10 dígitos
+  mapa: "https://maps.app.goo.gl/oDWiWGonWc36D9H8A",
+  mensajeRSVP: "¡Hola, Stephany! 🐝💕 Con mucho gusto confirmo mi asistencia al Baby Shower el sábado 26 de diciembre a las 2:30 PM en el Salón Gran Jardín. ¡Gracias por la invitación, ahí nos vemos!"
 };
 
 /* ====== Prados de margaritas (generados) ====== */
@@ -494,7 +495,7 @@ document.querySelectorAll("[data-meadow-inline]").forEach((el, i) => el.innerHTM
 
 /* ====== Enlaces ====== */
 const q = encodeURIComponent;
-document.getElementById("mapBtn").href = "https://www.google.com/maps/search/?api=1&query=" + q(EVENTO.lugar);
+document.getElementById("mapBtn").href = EVENTO.mapa;
 document.getElementById("rsvpBtn").href = "https://wa.me/" + EVENTO.whatsapp + "?text=" + q(EVENTO.mensajeRSVP);
 const toGCal = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
 document.getElementById("gcal").href = "https://calendar.google.com/calendar/render?action=TEMPLATE"
